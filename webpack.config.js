@@ -15,7 +15,6 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: ['@babel/polyfill', './index.js'],
-  target: 'web',
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist')
@@ -30,6 +29,7 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   devServer: {
     port: 4200,
+   
     hot: isDev
   },
   plugins: [
