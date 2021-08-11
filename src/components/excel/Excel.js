@@ -1,9 +1,9 @@
 import {$} from "@core/DOM.js"
 
 export class Excel{
-    constructor(selector,option){
+    constructor(selector,options){
         this.$el = $(selector);
-        this.components = option.components || [];
+        this.components = options.components || [];
         
     }
     getRoot(){
