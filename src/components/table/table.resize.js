@@ -3,14 +3,15 @@ export function resizeHandler($root,event){
     const $resizer = $(event.target)
     const $parent = $resizer.closest('[data-type="resizable"]')
     const coords = $parent.getCoords()
+    const type =$resizer.data.resize
+    let value;
+
     const sideProp = type === "col" ? "bottom":"right"
     $resizer.css({
         opacity:1,
         [sideProp]: "-5000px"
     })
 
-    const type =$resizer.data.resize
-    let value;
     document.onmousemove = e =>{
         if(type === "col"){
             const delta = e.pageX - coords.right
@@ -47,8 +48,8 @@ export function resizeHandler($root,event){
 
         $resizer.css({
             opacity:0,
-            bottom: "-5000px",
-            right:"0px"
+            bottom: 0,
+            right:0
         })
     }
 
