@@ -1,10 +1,10 @@
 YOU NEED TO RUN THIS PROJECT, NODEJS AND NPM;
 
 TO INSTALL ALL DEPENDENCIES,WRITE:
-npm i
+>>>>>>>npm i
 
 TO RUN THIS APP IN DEVELOPMENT MODE WRITE:
-npm run start
+>>>>>>>>>>npm run start
 
 TO BUILD THIS APP IN PRODUCT MODE WRITE:
-npm run build 
+>>>>>>>>>>>>npm run build 
