@@ -17,7 +17,7 @@ export class Table extends ExcelComponent {
         })
     }
     toHTML(){
-        return createTable(20,this.store.getState())
+        return createTable(50,this.store.getState())
     }
     prepare(){
         this.selection = new TableSelector()
@@ -46,7 +46,6 @@ export class Table extends ExcelComponent {
         this.selection.select($cell)
         this.$emit("table:select",$cell)
         const styles = $cell.getStyles(Object.keys(defaultStyles))
-        console.log("Styles to dispatch",styles)
         this.$dispatch(actions.changeStyles(styles))
     }
    async  resizeTable(event){

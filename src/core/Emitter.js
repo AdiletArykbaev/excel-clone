@@ -1,25 +1,28 @@
- export class Emitter {
-    constructor() {
-      this.listeners = {}
-    }
+export class Emitter {
+  constructor() {
+    this.listeners = {}
+  }
+
   
-    emit(event, ...args) {
-      if (!Array.isArray(this.listeners[event])) {
-        return false
-      }
-      this.listeners[event].forEach(listener => {
-        listener(...args)
-      })
-      return true
+  emit(event, ...args) {
+    if (!Array.isArray(this.listeners[event])) {
+      return false
     }
- 
-    subscribe(event, fn) {
-      this.listeners[event] = this.listeners[event] || []
-      this.listeners[event].push(fn)
-      return () => {
-        this.listeners[event] =
-          this.listeners[event].filter(listener => listener !== fn)
-      }
+    this.listeners[event].forEach(listener => {
+      listener(...args)
+    })
+    return true
+  }
+
+  
+  subscribe(event, fn) {
+    this.listeners[event] = this.listeners[event] || []
+    this.listeners[event].push(fn)
+    return () => {
+      this.listeners[event] =
+        this.listeners[event].filter(listener => listener !== fn)
     }
   }
-  
+}
+
+
